@@ -1,3 +1,32 @@
 extends ./layout/index
 block contenido 
-    p nosotros
+    main.container.mt-5 
+        .row 
+            .col-md-5 
+                img(src="img/nosotros.jpg",alt="imagen sobre nosotros", class="img-fluid")
+            .col-md-7
+                h1 #{pagina}
+                blockquote Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed nisi tellus, dictum nec aliquam eget, porta viverra tellus. Nam dignissim, sapien in faucibus feugiat, 
+
+                p Suspendisse potenti. Fusce ac semper erat. Fusce fermentum dapibus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam volutpat rutrum tortor, non euismod risus interdum in.Aliquam mattis magna sed odio consequat hendrerit.
+
+                p Fusce mattis nisl ut sapien dapibus pharetra ultrices nec nisl. Vivamus fermentum tincidunt mattis. Sed at pulvinar dui. Donec consectetur condimentum diam, sit amet dapibus quam faucibus quis. Donec non consectetur quam. Quisque tincidunt commodo ex, in tristique tellus dictum imperdiet. Nullam leo nisi, pulvinar sit amet nulla sodales, accumsan volutpat dolor.
+
+    .listado-iconos 
+        .container.mt-5.py-5.text-center 
+            .row 
+                .col-md-4 
+                    img(src="img/icono_seguridad.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad 
+                    p Fusce mattis nisl ut sapien dapibus pharetra ultrices nec nisl. Vivamus fermentum tincidunt mattis. Sed at pulvinar dui. Donec consectetur condimentum diam, sit amet dapibus quam faucibus quis. Donec non consectetur quam. Quisque tincidunt commodo ex
+
+                .col-md-4 
+                    img(src="img/icono_destinos.svg", alt="icono destinos", class="img-fluid mb-4")
+                    h2.mb-4 MejoresDestinos
+                    p Fusce mattis nisl ut sapien dapibus pharetra ultrices nec nisl. Vivamus fermentum tincidunt mattis. Sed at pulvinar dui. Donec consectetur condimentum diam, sit amet dapibus quam faucibus quis. Donec non consectetur quam. Quisque tincidunt commodo ex
+
+
+                .col-md-4 
+                    img(src="img/icono_precios.svg", alt="icono precios", class="img-fluid mb-4")
+                    h2.mb-4 Mejores Precios 
+                    p Fusce mattis nisl ut sapien dapibus pharetra ultrices nec nisl. Vivamus fermentum tincidunt mattis. Sed at pulvinar dui. Donec consectetur condimentum diam, sit amet dapibus quam faucibus quis. Donec non consectetur quam. Quisque tincidunt commodo ex
