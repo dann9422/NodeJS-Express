@@ -1,3 +1,7 @@
+
+import {Viaje} from '../models/Viaje.js' ;
+
+
 const paginaInicio = (req, res) => {
     //req- loq ue enviamos res lo que responde
     res.render('inicio',{
@@ -12,12 +16,22 @@ const paginaInicio = (req, res) => {
     });
   }
 
-  const paginaViajes =  (req, res) => {
+  const paginaViajes = async (req, res) => {
+    // consultar base de datos
+    const viajes = await Viaje.findAll();
+    console.log(viajes);
+  
+
+
     //req- loq ue enviamos res lo que responde
     res.render("viajes",{
-      pagina: 'Viajes'
+      pagina: 'Próximos Viajes',
+      viajes,
     });
   }
+
+
+
   const paginaTestimoniales =(req, res) => {
     //req- loq ue enviamos res lo que responde
     res.render("testimoniales",{
@@ -30,10 +44,27 @@ const paginaInicio = (req, res) => {
     res.render("contacto");
   }
 
+    // muestra un viaje por su slug
+    const paginaDetalleViaje = async (req, res)=>{
+          const {slug} = req.params;
+          try {
+            const viaje = await Viaje.findOne({where:{slug}});
+
+            res.render("viaje",{
+            pagina: 'Informacion viaje',
+           viaje
+          }
+            )
+          } catch (error) {
+            console.log(error);
+          }
+             }
+
   export {
       paginaInicio,
       paginaNosotros,
       paginaViajes,
       paginaTestimoniales,
-      paginaContacto
+      paginaContacto,
+      paginaDetalleViaje
   }
