@@ -2,10 +2,12 @@
 import express from "express";
 import router from "./routes/index.js";
 import db from './config/db.js';
+import dotenv from 'dotenv';
+dotenv.config({path:"variables.env"});
 const app = express();
 // definir el puerto
 
-const port = process.env.port || 4000;
+// const port = process.env.port || 4000;
 
 // conectar la base de datos
 
@@ -27,9 +29,18 @@ res.locals.actualyear =year.getFullYear();
 res.locals.nombresitio ='Agencia de viajes'
 next();
 })
+
+// instalar bodyparse para leer los datos ingresados por el usuario
+app.use(express.urlencoded({extended:true}));
+
 app.use(express.static('Public'));
 
 app.use("/", router);
-app.listen(port, () => {
-  console.log(`el servidor esta funcionando en el puerto${port}`);
+
+// puesto y host para la app
+
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
+app.listen(port,host, () => {
+  console.log(' el servidor esta funcionando');
 });
